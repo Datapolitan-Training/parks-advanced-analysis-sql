@@ -3,6 +3,12 @@
 ## Overview
 A one-day class to develop the necessary skills to clean, join, process, and visualize NYC Parks data in Microsoft Excel using SQL
 
+![img](Overview.jpg)
+
+![img](SoftSkills-HardSkills.jpg)
+
+![img](Communication-Process.jpg)
+
 ## Participant Development Areas
 **Conceptualizing:** Self-directed collaborative scoping of analytics problem and process
 
@@ -36,3 +42,4 @@ A one-day class to develop the necessary skills to clean, join, process, and vis
     + Presentations
 + Wrap-Up
 
+![img](SQL_Topics.jpgs)
