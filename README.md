@@ -42,4 +42,4 @@ A one-day class to develop the necessary skills to clean, join, process, and vis
     + Presentations
 + Wrap-Up
 
-![img](SQL_Topics.jpgs)
+![img](SQL_Topics.jpg)
