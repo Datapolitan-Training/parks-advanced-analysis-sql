@@ -1,22 +1,23 @@
-# Data Analysis with Excel II
+# Advanced Analysis with SQL
 
 ## Overview
-A one-day class to develop the necessary skills to clean, join, process, and visualize NYC Parks data with Microsoft Excel
+A one-day class to develop the necessary skills to clean, join, process, and visualize NYC Parks data in Microsoft Excel using SQL
 
 ## Participant Development Areas
-**Conceptualizing:** Supported scoping of analytics problem and process
+**Conceptualizing:** Self-directed collaborative scoping of analytics problem and process
 
-**Skill Development:** Advanced analytics operations, including formulas and functions to clean, process, and join NYC Parks data
+**Skill Development:** SQL for accessing, and extracting NYC Parks data for analysis
 
-**Integrating:** Investigate context using provided resources
+**Integrating:** Investigate context using NYC Parks resources
 
 **Communicating:** Project pitch with content critique in order to foster an entrepreneurial mindset with respect to developing and communicating analytical work
 
-**Language Objective:** Develop greater fluency in basic data skills to conceptualize a problem with data, integrate context, and communicate a true and compelling data story to others
+**Language Objective:** Creatively apply the tools of data analysis to explain problems and develop potential solutions with data
+
 
 ## Outline of Class
 + Welcome and Introductions
-+ Excel I Recap
++ Excel I/II Recap
 + Plan the Work
     + Data Conversation (identifying assumptions/validation)
     + Documenting work (process mapping redux)
@@ -26,12 +27,11 @@ A one-day class to develop the necessary skills to clean, join, process, and vis
     + Data Types
     + Formulas/Order of Operations
     + Nesting functions
-    + Aggregating (SUMIF, COUNTIF)
-    + Stacking Fields in PivotTables
-    + Joining by Attributes (Unique Key VLOOKUP)
+    + Aggregating (GROUP BY)
+    + Joining by Attributes
 + Lunch
 + Refine the Work
-    + Data Visualization Redux
+    + Optimizing queries
 + Communicate the Work
     + Presentations
 + Wrap-Up
