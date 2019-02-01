@@ -5,10 +5,6 @@ A one-day class to develop the necessary skills to clean, join, process, and vis
 
 ![img](Overview.jpg)
 
-![img](Communication-Process.jpg)
-
-![img](SoftSkills-HardSkills.jpg)
-
 ## Participant Development Areas
 **Conceptualizing:** Self-directed collaborative scoping of analytics problem and process
 
