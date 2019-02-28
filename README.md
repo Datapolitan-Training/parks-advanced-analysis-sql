@@ -5,7 +5,10 @@ A one-day class to develop the necessary skills to clean, join, process, and vis
 
 ![img](Overview.jpg)
 
+## Goals
+
 ## Participant Development Areas
+
 **Conceptualizing:** Self-directed collaborative scoping of analytics problem and process
 
 **Skill Development:** SQL for accessing, and extracting NYC Parks data for analysis
@@ -16,8 +19,9 @@ A one-day class to develop the necessary skills to clean, join, process, and vis
 
 **Language Objective:** Creatively apply the tools of data analysis to explain problems and develop potential solutions with data
 
+## Learning Objectives
 
-## Outline of Class
+## Outline
 + Welcome and Introductions
 + Excel I/II Recap
 + Plan the Work
@@ -39,3 +43,8 @@ A one-day class to develop the necessary skills to clean, join, process, and vis
 + Wrap-Up
 
 ![img](SQL_Topics.jpg)
+
+
+## Exercise Descriptions
+
+## Classroom Setup
