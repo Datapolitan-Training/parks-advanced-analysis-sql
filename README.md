@@ -6,11 +6,12 @@ A one-day class reinforcing the skills necessary to leverage a relational databa
 ![img](Overview.jpg)
 
 ## Target Audience
-Employees of all levels of responsibility with a command of Microsoft Excel for sorting, filtering, aggregating, transforming, and visualizing data to tell a true and compelling story. Participants should have some familiarity with basic functions and how to write formulas to transform data. Participants should complete Introduction to Data Analysis prior to attending this class for an introduction to problem ideation and process mapping.
+Employees of all levels of responsibility with a command of Microsoft Excel for sorting, filtering, aggregating, transforming, and visualizing data to tell a true and compelling story, ideally through Excel for Data Analysis I and II. No familiarity with SQL is necessary for this class as we will be introducing and practicing key concepts in class. Participants should complete Introduction to Data Analysis prior to attending this class for an introduction to problem ideation and process mapping.
 
 ## Goals
-+ Reinforce and practice key steps in exploratory data analysis
++ Introduce key concepts necessary for working with relational database management systems
 + Demonstrate advanced techniques with SQL for data analysis
++ Reinforce and practice best practices in exploratory data analysis
 + Reinforce brainstorming, problem ideation, and process mapping skills introduced in previous classes
 + Practice presenting true and compelling data stories to peers
 + Cultivate an attitude of curiosity to foster a culture of data-driven inquiry
