@@ -1,7 +1,7 @@
 # Advanced Analysis with SQL
 
 ## Summary
-A one-day class reinforcing the skills necessary to leverage a relational database to clean, process, and visualize NYC Parks data. The class will introduce key concepts and skills necessary to use the Structured Query Langage (SQL) for data analysis, reinforcing the problem ideation and process mapping skills taught in Introduction to Data Analysis. Working collaboratively in small groups, participants will develop an analytical question they explore throughout the class, presenting their data story at the end of class for constructive feedback.
+A one-day class reinforcing the skills necessary to leverage a relational database to clean, process, and visualize NYC Parks data. The class will introduce key concepts and skills necessary to use the Structured Query Language (SQL) for data analysis, reinforcing the problem ideation and process mapping skills taught in Introduction to Data Analysis. Working collaboratively in small groups, participants will develop an analytical question they explore throughout the class, presenting their data story at the end of class for constructive feedback.
 
 ![img](Overview.jpg)
 
