@@ -381,6 +381,58 @@ class:center,middle
 class:center,middle
 # Importing data with SQL
 
+???
++ Walk through importing data with SQL into Excel with a simple query
+
+---
+
+class:center,middle
+# What did we just do?
+
+---
+
+# Tables
+--
+
++ How data is stored in a database
+--
+
++ Organized in rows and columns
+--
+
++ Similar to a worksheet in Excel
+
+---
+
+# `SELECT`
+--
+
++ How you specify which columns to get from a table
+--
+
++ Start with `SELECT *`, which gets all the columns
+--
+
++ Separate column names with commas (`,`)
+
+---
+
+# `SELECT date_created, created_by`
+# `FROM tbl_daily_task_activity`
+--
+
++ Only get the `date_created` and `created_by` columns from the `tbl_daily_task_activity` table
+
+---
+
+# `FROM`
+--
+
++ How you specify the table you are querying
+--
+
++ `FROM tbl_daily_task_activity`
+
 ---
 
 class:center,middle
@@ -396,6 +448,22 @@ class:center,middle
 
 ???
 + Facilitator walks through benefits of using SQL: you need to in order to communicate with a database, but also it can be self documenting: "here's the query I used" rather than "I clicked here, then there, then picked this option..." in Excel.
+
+---
+
+# SQL
+--
+
++ The language databases understand
+--
+
++ If you want to use a database, you will need at least a little SQL
+--
+
++ It makes queries replicable&mdash;you can run the query again and be sure you will get the same results
+
+--
++ ...and someone can use your query and be sure they will get the same results, too!
 
 ---
 
@@ -418,6 +486,9 @@ class:center,middle
 ???
 + Look back at filters in Excel
 + Do something similar in a WHERE
++ `AND` and `OR`
++ Watch out for precedence with `AND` and `OR`
++ `NULL` vs empty strings
 
 ---
 
@@ -428,6 +499,7 @@ class:center,middle
 + You can do arithmetic in SQL, too
 + Order of operations is similar, using parentheses as needed
 + Show equivalent in SQL to something relatively complicated in Excel
++ Introduce `AS` for setting the output column name
 
 ---
 
@@ -459,6 +531,8 @@ class:center, middle
 + Sometimes you can write inefficient queries
 + Common pitfalls, how to recognize a slow query
 + Common ways to speed things up (such only selecting what you need to select)
++ Mention indexes?
++ Avoid an `IN` with a subquery? Might be too technical.
 
 ---
 
