@@ -475,6 +475,15 @@ class:center,middle
 ---
 
 # Data types
+--
+
++ Every column in a database table has a type
+--
+
++ A column's type determines what you can do with that column
+--
+
++ For example, you can do math on numbers but not on text
 
 ???
 + Take a look back at data types in Excel
@@ -483,7 +492,15 @@ class:center,middle
 
 ---
 
-# WHERE
+# `WHERE`
+--
+
++ Lets you limit which *rows* are selected from the database
+--
+
++ You define a condition that is either true or false, and every row is evaluated using that
+
+--
 
 ???
 + Look back at filters in Excel
@@ -494,7 +511,76 @@ class:center,middle
 
 ---
 
+# `WHERE`
+
+```
+SELECT *
+FROM tbl_DailyTasks
+WHERE graffiti = 1
+```
+--
+
++ Select the daily tasks rows where graffiti was present
+
+---
+
+# `WHERE` operators
+
++ You can use `&gt;`, `&gt;=`, `&lt;`, `&lt;=`, `=`, `!=`, `&lt;&gt;`
+--
+
++ Learn more in [the SQL Server documentation](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/comparison-operators-transact-sql?view=sql-server-2017)
+
+---
+
+class:center,middle
+# What if you want to combine conditions?
+
+---
+
+# `WHERE`
+
+```
+SELECT *
+FROM tbl_DailyTasks
+WHERE graffiti = 1 AND nhours &gt; 1
+```
+--
+
++ Select the daily tasks rows where graffiti was present *and* the number of hours taken was over 1
+
+---
+
+# `WHERE`
+
+```
+SELECT *
+FROM tbl_DailyTasks
+WHERE omppropid = 'X045-01' OR omppropid = 'X045-02'
+```
+--
+
++ Select the daily tasks rows for `omppropid` equal to either `X045-01` or `X045-02`
+
+---
+
+# `WHERE`
+
+```
+SELECT *
+FROM tbl_DailyTasks
+WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
+```
+--
+
++ What do you think this does?
+
+---
+
 # Formulas
+--
+
++ You can do arithmetic and combine columns in the ways you're used to in Excel
 
 ???
 + Take a look back at arithmetic in Excel
@@ -510,6 +596,21 @@ class:center,middle
 ???
 + Look back at COUNTIF/SUMIF pivot tables in Excel
 + Do something similar using a combination of GROUP BY and WHERE
+
+---
+
+# `GROUP BY`
+
+---
+
+# Aggregation functions
+--
+
++ `COUNT`
++ `SUM`
++ `AVG`
++ `MIN`
++ `MAX`
 
 ---
 
@@ -552,6 +653,10 @@ class:center,middle
 ---
 
 # Resources
+--
+
++ [SQL: One of the Most Valuable Skills](http://www.craigkerstiens.com/2019/02/12/sql-most-valuable-skill/)
+
 ???
 + Facilitator provides key resources for continued learning
 
