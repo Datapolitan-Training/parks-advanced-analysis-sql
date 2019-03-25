@@ -119,6 +119,22 @@ class:center,middle
 
 ---
 
+# What to Expect Today
+--
+
++ Introduction to databases
+--
+
++ Introduction to SQL
+--
+
++ Hands-on experience writing and using SQL
+--
+
++ A chance to explore SQL and perform some analysis using it
+
+---
+
 class:center,middle
 # Let's Get Started
 
@@ -233,43 +249,6 @@ class:center,middle
 
 ---
 
-# Sorting by Date
-???
-+ Facilitator leads participants through simple exercise to sort data in Excel
---
-
-![img-center-100](images/sort_overview.png)
---
-
-
-![img-center-100](images/sort1_box.png)
-???
-+ Facilitator emphasizes the need to expand the selection, describing (or better having participants describe) the consequences of not expanding the selection
-
----
-
-# Sorting by Date
-![img-center-65](images/sort4a.png)
-???
-+ Facilitator demonstrates filtering by multiple columns
---
-
-
-![img-center-65](images/sort4b.png)
-
-
----
-
-# Sorting by Date
-![img-center-60](images/sort4.png)
---
-
-
-![img-center-60](images/sort_final.png)
-???
-+ Facilitator finishes demonstration and solicits feedback from participants
----
-
 # 3. Filtering
 ???
 + Facilitator leads brief discussion of filtering, soliciting examples from participants on applicability to their own work
@@ -289,14 +268,6 @@ class:center,middle
 ![img-center-100](images/filter_slide83.png)
 ???
 + Facilitator demonstrates how to filter in Excel
----
-
-# Filtering
-![img-center-80](images/filtering_new_tree_slide_84.png)
-???
-+ Facilitator demonstrates filtering using the search box
-+ This isn't a Parks example and there's [an open issue to replace the graphic](https://github.com/Datapolitan-Training/parks-excel-analysis-i/issues/14)
-
 ---
 
 # 4. Manipulating Data (In a good way...)
@@ -379,20 +350,75 @@ class:center,middle
 ---
 
 class:center,middle
-# SQL
-
----
-
-class:center,middle
-# Importing data with SQL
+# Importing data into Excel with SQL
 
 ???
 + Walk through importing data with SQL into Excel with a simple query
 
 ---
 
+# Importing data from a database
+
+![img-center-100](images/get_data_sql_server.png)
+
++ Data &gt; Get Data &gt; From Database &gt; From SQL Server Database
+
+---
+
+# Importing data from a database
+
+![img-center-100](images/server_connect.png)
+
++ Enter the server name in the **Server** field
+
+---
+
+# Importing data from a database
+
+![img-center-50](images/server_navigator.png)
+
++ View the accessible databases
+
+---
+
+# Importing data from a database
+
+![img-center-50](images/server_navigator_selected_table.png)
+
++ View the accessible tables and preview them
++ Click **Load**
+
+---
+
+# Importing data from a database
+
+![img-center-100](images/received_data_headers.png)
+
+---
+
 class:center,middle
 # What did we just do?
+
+---
+
+class:center,middle
+# What is a database?
+
+---
+
+# What is a database?
+--
+
++ A software system that manages storing and retrieving data
+--
+
++ The software for a database often runs on a server, not the computer you're using
+--
+
++ There are many different database systems, today we'll be using Microsoft's SQL Server
+--
+
++ A database stores data in *tables*
 
 ---
 
@@ -402,10 +428,21 @@ class:center,middle
 + How data is stored in a database
 --
 
-+ Organized in rows and columns
++ Similar to a worksheet in Excel
 --
 
-+ Similar to a worksheet in Excel
++ Organized in *rows* and *columns*
+--
+
+![img-left-50](images/table_row.png)
+--
+
+![img-right-50](images/table_column.png)
+
+---
+
+class:center,middle
+# Let's do that again using SQL
 
 ---
 
@@ -425,13 +462,22 @@ class:center,middle
 # For example:
 
 ```
-SELECT date_created, created_by
-FROM tbl_daily_task_activity
+SELECT *
+FROM tbl_DailyTasks
 ```
 --
 
-+ Only get the `date_created` and `created_by` columns from the `tbl_daily_task_activity` table
++ Get all of the columns from the `tbl_DailyTasks` table
+--
 
+
+```
+SELECT date_created, created_by
+FROM tbl_DailyTasks
+```
+--
+
++ Only get the `date_created` and `created_by` columns from the `tbl_DailyTasks` table
 ---
 
 # `FROM`
@@ -440,7 +486,9 @@ FROM tbl_daily_task_activity
 + How you specify the table you are querying
 --
 
-+ `FROM tbl_daily_task_activity`
+```
+FROM tbl_DailyTasks
+```
 
 ---
 
@@ -507,6 +555,9 @@ For example, you can do math on numbers but not on text.
 --
 
 + The database will refuse to store data that doesn't match the column's type
+--
+
++ Unless you're an administrator, you most likely will not be changing the column's type
 
 
 ???
@@ -521,15 +572,12 @@ For example, you can do math on numbers but not on text.
 
 + `int`
 --
-
-a number with no digits after the decimal point, like `5` or `100349`
+ - a number with no digits after the decimal point, like `5` or `100349`
 --
 
 + `float`
 --
-
-a number with digits after the decimal point, like `5.01` or `100.349`
-
+ - a number with digits after the decimal point, like `5.01` or `100.349`
 ---
 
 # Common text data types
@@ -537,14 +585,12 @@ a number with digits after the decimal point, like `5.01` or `100.349`
 
 + `varchar`
 --
-
-text with a maximum length, like `Queens`
+ - text with a maximum length, like `Queens`
 --
 
 + `text`
 --
-
-text with no maximum length, like an open comment field
+ - text with no maximum length, like an open comment field
 
 ---
 
@@ -553,14 +599,12 @@ text with no maximum length, like an open comment field
 
 + `date`
 --
-
-a specific date, like `2002-10-17`
+ - a specific date, like `2002-10-17`
 --
 
 + `datetime`
 --
-
-a specific date and time, like `2002-10-17 06:13:00`
+ - a specific date and time, like `2002-10-17 06:13:00`
 --
 
 + Learn more in the [SQL Server documentation](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-2017)
@@ -599,12 +643,63 @@ WHERE graffiti = 1
 
 ---
 
+# `WHERE`
+
+```
+SELECT *
+FROM tbl_DailyTasks
+WHERE nhours &gt; 1
+```
+--
+
++ Select the daily tasks rows where nhours is greater than 1
+
+---
+
 # `WHERE` operators
 
-+ You can use `&gt;`, `&gt;=`, `&lt;`, `&lt;=`, `=`, `!=`, `&lt;&gt;`
++ `=`
+--
+ - equal to
+--
+
++ `&gt;`
+--
+ - greater than
+--
+
++ `&gt;=`
+--
+ - greater than or equal to
+--
+
++ `&lt;`
+--
+ - less than
+--
+
++ `&lt;=`
+--
+ - less than or equal to
+--
+
++ `!=`
+--
+ and `&lt;&gt;`
+--
+ - not equal to
 --
 
 + Learn more in [the SQL Server documentation](https://docs.microsoft.com/en-us/sql/t-sql/language-elements/comparison-operators-transact-sql?view=sql-server-2017)
+
+---
+
+# Your Turn
+
++ Create an SQL query with a `WHERE` clause
++ Continue using the `tbl_DailyTasks` table
++ Try writing a condition on a numeric column
++ If you have time, try writing a condition on a text column
 
 ---
 
@@ -649,6 +744,17 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 --
 
 + What do you think this does?
+--
+
++ Why would we use parentheses here?
+
+---
+
+# Your Turn
+
++ Create an SQL query with a `WHERE` clause
++ Continue using the `tbl_DailyTasks` table
++ Start with one condition, then try adding conditions using `AND` / `OR`
 
 ---
 
@@ -669,7 +775,30 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 
 ---
 
-# Using formulas with text
+# Using formulas with numbers
+--
+
++ You can use the usual mathematical operators here:
+  `+`, `-`, `/`, `*`
+--
+
++ For example, you can multiply a column by a number
+--
+
++ `nhours * 60`
+--
+
+would find the number of minutes
+--
+
+```
+SELECT nhours * 60
+FROM tbl_DailyTasks
+```
+
+---
+
+# Using functions with change text
 --
 
 + Remember the `LEFT` function in Excel?
@@ -682,19 +811,36 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 
 ---
 
-# Using formulas with text
+# Using functions with text
 --
 
 + We can do the same thing with SQL
 --
 
-+ `SUBSTRING` extracts part of a string
++ `LEFT` extracts part of a string
 --
 
-+ `SUBSTRING(column, start, length)`
++ The format is `LEFT(column, length)`
 --
 
-+ `SUBSTRING(propid, 1, 1)`
++ `LEFT(propid, 1)` would select the first letter from the `propid` column
+
+--
+```
+SELECT LEFT(propid, 1)
+FROM tbl_DailyTasks
+```
+
+--
+
++ Find more functions in the [SQL Server Documentation](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-functions-transact-sql?view=sql-server-2017)
+
+---
+
+# Your Turn
+
++ Look at the documentation for [mathematical functions](https://docs.microsoft.com/en-us/sql/t-sql/functions/mathematical-functions-transact-sql?view=sql-server-2017) and [string functions](https://docs.microsoft.com/en-us/sql/t-sql/functions/string-functions-transact-sql?view=sql-server-2017)
++ Write an SQL query that uses one of the functions that you found
 
 ---
 
@@ -718,7 +864,10 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 # Aggregation example
 --
 
-+ Remember `COUNTIF` and `SUMIF` from Excel?
++ Remember pivot tables from Excel?
+--
+
++ ...and `COUNTIF` and `SUMIF` from Excel?
 --
 
 ![img-center-80](images/countiffunctionaction.png)
@@ -729,6 +878,25 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 ---
 
 # `GROUP BY`
+--
+
++ You can add `GROUP BY` after a `WHERE` in a query to group by a certain column
+--
+
++ For example if you want to summarize data by `sector`, then you would use `GROUP BY sector`
+
+---
+
+# Aggregation functions
+--
+
++ `GROUP BY` isn't useful by itself
+--
+
++ You will usually want to aggregate some other columns
+--
+
++ Aggregation functions let you do this
 
 ---
 
@@ -736,10 +904,38 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 --
 
 + `COUNT`
+--
+ - counts the number of values, usually used as `COUNT(*)`
+--
+
 + `SUM`
+--
+ - sum the values, for example `SUM(nhours)`
+--
+
 + `AVG`
+--
+ - average the values, such as `AVG(nhours)`
+--
+
 + `MIN`
+--
+ - find the smallest value, such as `MIN(nhours)`
+--
+
 + `MAX`
+--
+ - find the largest value, such as `MAX(nhours)`
+--
+
+---
+
+# Your Turn
+
++ Aggregate the data again
++ Use the `tbl_DailyTasks` table
++ In your SQL, you should use `GROUP BY` and one of the aggregation functions on the previous slide
++ Feel free to experiment
 
 ---
 
@@ -748,12 +944,12 @@ class:center,middle
 
 ---
 
-# Joins
+class:center, middle
+# WELCOME BACK!
 
 ---
 
-class:center, middle
-# WELCOME BACK!
+# Joins
 
 ---
 
@@ -773,11 +969,58 @@ class:center,middle
 
 ---
 
+# Final Exercise
+--
+
++ Consider the SQL we just talked about
+--
+
++ Think about some questions you could ask of the PIP and Daily Tasks data (or some other database tables you have access to)
+--
+
++ Think about data visualizations you could do to answer the questions
+
+---
+
+# Your Turn
+--
+
++ Create a new Excel workbook
+--
+
++ Create a worksheet in the workbook that will contain your documentation
+--
+
++ Try to write SQL queries for each of the questions that you established earlier, making a new worksheet for each
+--
+
++ Make a data visualization with at least one of these worksheets
+
+---
+
+class:center, middle
 # Presentations
 
 ---
 
+class:center, middle
 # Wrap-up
+
+---
+
+# What We've Covered
+--
+
++ Introduction to databases
+--
+
++ Introduction to SQL
+--
+
++ Using SQL in Excel to gather and analyze data
+--
+
++ Did we miss anything?
 
 ---
 
@@ -786,8 +1029,17 @@ class:center,middle
 
 + [SQL: One of the Most Valuable Skills](http://www.craigkerstiens.com/2019/02/12/sql-most-valuable-skill/)
 --
+ - more about why you might want to learn SQL
+--
 
 + [Microsoft SQL Documentation](https://docs.microsoft.com/en-us/sql/?view=sql-server-2017)
+--
+ - Includes anything you might want to know about SQL Server
+--
+
++ [SQL Zoo](https://sqlzoo.net/wiki/Main_Page)
+--
+ - Interactive SQL tutorial
 
 ???
 + Facilitator provides key resources for continued learning
