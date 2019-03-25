@@ -422,8 +422,12 @@ class:center,middle
 
 ---
 
-# `SELECT date_created, created_by`
-# `FROM tbl_daily_task_activity`
+# For example:
+
+```
+SELECT date_created, created_by
+FROM tbl_daily_task_activity
+```
 --
 
 + Only get the `date_created` and `created_by` columns from the `tbl_daily_task_activity` table
@@ -445,6 +449,19 @@ class:center,middle
 
 ???
 + Facilitator walks through benefits of using a database: single source of truth, always the latest data
+
+---
+
+# Why use a database?
+--
+
++ Single source of truth
+--
+
++ Don't have to worry about moving and sharing files
+--
+
++ Can be faster and more consistent than Excel files
 
 ---
 
@@ -483,15 +500,70 @@ class:center,middle
 + Every column in a database table has a type
 --
 
-+ A column's type determines what you can do with that column
++ A column's type determines what you can do with that column.
 --
 
-+ For example, you can do math on numbers but not on text
+For example, you can do math on numbers but not on text.
+--
+
++ The database will refuse to store data that doesn't match the column's type
+
 
 ???
 + Take a look back at data types in Excel
 + Mention that data types are more rigid in a database
 + Integers, floats, datetime, strings
+
+---
+
+# Common numeric data types
+--
+
++ `int`
+--
+
+a number with no digits after the decimal point, like `5` or `100349`
+--
+
++ `float`
+--
+
+a number with digits after the decimal point, like `5.01` or `100.349`
+
+---
+
+# Common text data types
+--
+
++ `varchar`
+--
+
+text with a maximum length, like `Queens`
+--
+
++ `text`
+--
+
+text with no maximum length, like an open comment field
+
+---
+
+# Other common data types
+--
+
++ `date`
+--
+
+a specific date, like `2002-10-17`
+--
+
++ `datetime`
+--
+
+a specific date and time, like `2002-10-17 06:13:00`
+--
+
++ Learn more in the [SQL Server documentation](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-2017)
 
 ---
 
@@ -583,7 +655,10 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 # Formulas
 --
 
-+ You can do arithmetic and combine columns in the ways you're used to in Excel
++ You can do arithmetic and combine values in the ways you're used to in Excel
+--
+
++ You can also get a modified version of a value
 
 ???
 + Take a look back at arithmetic in Excel
@@ -594,11 +669,62 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 
 ---
 
+# Using formulas with text
+--
+
++ Remember the `LEFT` function in Excel?
+--
+
+![img-center-80](images/leftfunctionaction.png)
+--
+
++ It extracts part of a cell's value
+
+---
+
+# Using formulas with text
+--
+
++ We can do the same thing with SQL
+--
+
++ `SUBSTRING` extracts part of a string
+--
+
++ `SUBSTRING(column, start, length)`
+--
+
++ `SUBSTRING(propid, 1, 1)`
+
+---
+
 # Aggregation
+--
+
++ You often don't want or need every single row from a database
+--
+
++ For example, if you want to count all of the rows matching some condition you don't want to load all of them in Excel, then count them
+--
+
++ When you can, *make the database do the work*
 
 ???
 + Look back at COUNTIF/SUMIF pivot tables in Excel
 + Do something similar using a combination of GROUP BY and WHERE
+
+---
+
+# Aggregation example
+--
+
++ Remember `COUNTIF` and `SUMIF` from Excel?
+--
+
+![img-center-80](images/countiffunctionaction.png)
+--
+
++ We're going to work through something similar using SQL
 
 ---
 
@@ -617,12 +743,12 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 
 ---
 
-# Joins
+class:center,middle
+# LUNCH
 
 ---
 
-class:center,middle
-# LUNCH
+# Joins
 
 ---
 
@@ -659,6 +785,9 @@ class:center,middle
 --
 
 + [SQL: One of the Most Valuable Skills](http://www.craigkerstiens.com/2019/02/12/sql-most-valuable-skill/)
+--
+
++ [Microsoft SQL Documentation](https://docs.microsoft.com/en-us/sql/?view=sql-server-2017)
 
 ???
 + Facilitator provides key resources for continued learning
