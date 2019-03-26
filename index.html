@@ -616,6 +616,8 @@ For example, you can do math on numbers but not on text.
 
 + Lets you limit which *rows* are selected from the database
 --
+![img-center-100](images/filter_slide83.png)
+--
 
 + You define a condition that is either true or false, and every row is evaluated using that
 
@@ -905,7 +907,7 @@ FROM tbl_DailyTasks
 
 + `COUNT`
 --
- - counts the number of values, usually used as `COUNT(*)`
+ - count the number of values, usually used as `COUNT(*)`
 --
 
 + `SUM`
@@ -930,6 +932,24 @@ FROM tbl_DailyTasks
 
 ---
 
+# Aggregation functions
+--
+
++ Putting it all together, we can use `SUM(nhours)` and `GROUP BY sector`
+--
+
+```
+SELECT sector, SUM(nhours)
+FROM tbl_DailyTasks
+GROUP BY sector
+```
+
+--
+
++ You usually want to include the column you grouped by in the `SELECT` so you can see which group is being talked about
+
+---
+
 # Your Turn
 
 + Aggregate the data again
@@ -949,7 +969,62 @@ class:center, middle
 
 ---
 
+class:center, middle
+# What questions came up over lunch?
+
+---
+
+# Recap
+--
+
++ `SELECT`
+--
+ - picks columns from your table
+--
+
++ `FROM`
+--
+ - picks a table
+--
+
++ `WHERE`
+--
+ - decides which rows are selected
+--
+
++ `GROUP BY`
+--
+ - aggregates data based on a column
+
+---
+
+class:center, middle
+# Mind if we complicate things a little more?
+
+---
+
+class:center, middle
+# Specifically, what if you need to look at data from two or more tables?
+
+---
+
+class:center, middle
+# Then you might need a *join*
+
+---
+
 # Joins
+--
+
++ Allow you to bring in columns from mulitple database tables at once
+--
+
++ Require some common column between the tables in order to determine which values are associated with which
+--
+
++ Are a little tricky to write
+--
+...but are very powerful
 
 ---
 
