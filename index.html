@@ -1028,17 +1028,6 @@ class:center, middle
 
 ---
 
-# Optimizing queries
-
-???
-+ Sometimes you can write inefficient queries
-+ Common pitfalls, how to recognize a slow query
-+ Common ways to speed things up (such only selecting what you need to select)
-+ Mention indexes?
-+ Avoid an `IN` with a subquery? Might be too technical.
-
----
-
 class:center,middle
 # 15 MIN BREAK
 
@@ -1096,6 +1085,31 @@ class:center, middle
 --
 
 + Did we miss anything?
+
+---
+
+# Optimizing queries
+--
+
++ What if you try to load data and it takes too long?
+--
+
++ Try to minimize the number of *rows* and *columns* you are pulling out of the database
+--
+
++ Remember you can use `SELECT` to limit the columns
+--
+
++ And you can use `WHERE` to limit the rows
+--
+
++ If you only need a summary of the data, consider using aggregation (`GROUP BY`)
+
+???
++ Sometimes you can write inefficient queries
++ Common pitfalls, how to recognize a slow query
++ Common ways to speed things up (such only selecting what you need to select)
++ Mention indexes?
 
 ---
 
