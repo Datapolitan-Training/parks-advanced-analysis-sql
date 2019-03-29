@@ -1132,17 +1132,84 @@ class:center, middle
 
 ---
 
-# Joins
+# Joins in Excel
 --
 
-+ There are numerous types of joins, but we'll just work with a `LEFT` join
+## Remember `VLOOKUP`?
+--
+
+![img-center-100](images/vlookupfunction.png)
+
+---
+
+# Joins in Excel
+--
+
+![img-center-100](images/vlookupfunctionaction.png)
+
+---
+
+# Joins in SQL
+--
+
++ As with `VLOOKUP`, you will need a common column between two tables
+--
+
++ For the join to work, you generally need the values in these columns to match *exactly* and have the same data type
+
+---
+
+# Joins in SQL
+--
+
++ There are numerous types of joins, but we'll work with a `LEFT` join today
 --
 
 + `LEFT` joins keep all of the rows from the *left* table, combined with the *right* table where there are matches
+--
+
++ The format of a join is: `LEFT JOIN &lt;table_name&gt; ON &lt;condition&gt;`
+--
+
++ For example, `LEFT JOIN tbl_pipinspectionmain pip ON tasks.omppropid = pip.prop_id`
+
+---
+
+class:center,middle
+# Let's use a join to get the park names from Daily Tasks into the PIP Inspection data
+
+---
+
+# Joins in SQL
+???
++ Instructor walks through named tables, this is the first we're seeing them
+--
+
+## The full example is:
+
+```
+SELECT pip.*, tasks.signname
+FROM tbl_pipinspectionmain pip
+LEFT JOIN tbl_dailytasks tasks ON pip.prop_id = tasks.omppropid
+```
+--
+
++ What is familiar here?
++ What is unfamiliar?
 
 ---
 
 # Your Turn
+
++ Try running the join example we worked through together:
+
+```
+SELECT pip.*, tasks.signname
+FROM tbl_pipinspectionmain pip
+LEFT JOIN tbl_dailytasks tasks ON pip.prop_id = tasks.omppropid
+```
+
++ Add more columns from the `tbl_dailytasks` to the `SELECT` columns
 
 ---
 
