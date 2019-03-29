@@ -432,98 +432,6 @@ FROM tbl_dailytasks
 
 ---
 
-# Data types
---
-
-+ Every column in a database table has a type
---
-
-+ A column's type determines what you can do with that column.
---
-
-For example, you can do math on numbers but not on text.
---
-
-+ The database will refuse to store data that doesn't match the column's type
---
-
-+ Unless you're an administrator, you most likely will not be changing the column's type
-
-
-???
-+ Take a look back at data types in Excel
-+ Mention that data types are more rigid in a database
-+ Integers, numeric, datetime, strings
-
----
-
-# Common numeric data types
---
-
-+ `int`
---
- - a number with no digits after the decimal point, like `5` or `100349`
---
-
-+ `numeric`
---
- - a number with digits after the decimal point, like `5.01` or `100.349`
----
-
-# Common text data types
---
-
-+ `varchar`
---
- - text with a maximum length, like `Queens`
---
-
-+ `text`
---
- - text with no maximum length, like an open comment field
-
----
-
-# Other common data types
---
-
-+ `date`
---
- - a specific date, like `2002-10-17`
---
-
-+ `datetime`
---
- - a specific date and time, like `2002-10-17 06:13:00`
---
-
-+ Learn more in the [SQL Server documentation](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-2017)
-
----
-
-# Why do data types matter?
---
-
-+ Databases and SQL are less flexible than Excel here
---
-
-+ Knowing the data type of a column can help you better understand what to expect in that column
---
- - `date` columns will never include time, for example
---
-
-+ Some functions only work on certain data types
---
-
-+ If you need a column to be a different data type, you might find [`CAST` or `CONVERT` useful](https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-2017)
-
----
-
-class:center,middle
-# 15 MIN BREAK
-
----
-
 # Data Analytics Tasks: Filtering
 ???
 + Facilitator leads brief discussion of filtering, soliciting examples from participants on applicability to their own work
@@ -692,6 +600,114 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 + Create an SQL query with a `WHERE` clause
 + Continue using the `tbl_dailytasks` table
 + Start with one condition, then try adding conditions using `AND` / `OR`
+
+---
+
+class:center,middle
+# 15 MIN BREAK
+
+---
+
+# Data types
+--
+
++ Every column in a database table has a type
+--
+
++ A column's type determines what you can do with that column.
+--
+
+For example, you can do math on numbers but not on text.
+--
+
++ The database will refuse to store data that doesn't match the column's type
+--
+
++ Unless you're an administrator, you most likely will not be changing the column's type
+
+
+???
++ Take a look back at data types in Excel
++ Mention that data types are more rigid in a database
++ Integers, numeric, datetime, strings
+
+---
+
+# Common numeric data types
+--
+
++ `int`
+--
+ - a number with no digits after the decimal point, like `5` or `100349`
+--
+
++ `numeric`
+--
+ - a number with digits after the decimal point, like `5.01` or `100.349`
+---
+
+# Common text data types
+--
+
++ `varchar`
+--
+ - text with a maximum length, like `Queens`
+--
+
++ `text`
+--
+ - text with no maximum length, like an open comment field
+
+---
+
+# Other common data types
+--
+
++ `date`
+--
+ - a specific date, like `2002-10-17`
+--
+
++ `datetime`
+--
+ - a specific date and time, like `2002-10-17 06:13:00`
+--
+
++ Learn more in the [SQL Server documentation](https://docs.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql?view=sql-server-2017)
+
+---
+
+# Why do data types matter?
+--
+
++ Databases and SQL are less flexible than Excel here
+--
+
++ Knowing the data type of a column can help you better understand what to expect in that column
+--
+ - `date` columns will never include time, for example
+--
+
++ Some functions only work on certain data types
+--
+
++ If you need a column to be a different data type, you might find [`CAST` or `CONVERT` useful](https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-2017)
+
+---
+
+# Your Turn
+--
+
++ There are functions that work only with specific data types
+--
+
++ For example, `YEAR()` only works on columns that are `date`s
+--
+
++ See other date and time functions in the [SQL Server documentation](https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-2017#DateandTimeFunctions)
+--
+
++ Try selecting the rows from `tbl_dailytasks` where `YEAR(date_worked)` is `2019`
 
 ---
 
