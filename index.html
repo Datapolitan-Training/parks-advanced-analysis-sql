@@ -197,110 +197,23 @@ class:center,middle
 # 5 Data Analytics Tasks
 ???
 + Facilitator introduces the 5 main tasks of analysis
-+ Facilitator reminds participants we've already done the first task
-+ The goal is to dispell the "black box" sense of analytics as something mystic and unknowable
++ Facilitator reminds participants we've talked about these in previous courses
++ We're going to look at the first three in SQL
 --
 
-1. Aggregating (PivotTable)
+1. Filtering
 --
 
-2. Sorting
+1. Sorting
 --
 
-3. Filtering
+1. Aggregating
 --
 
-4. Manipulating
+1. Manipulating
 --
 
-5. Visualizing
-
----
-
-# 1. Aggregating Data 
-???
-+ Facilitator reminds participants we've already done this work with the available data
-+ Facilitator prompts participants to think of other ways they aggregate data for insights
---
-
-+ Trends only become clear in aggregate
---
-
-+ Often where you discover the "so what"
---
-
-+ Aggregating data meaningfully can be tricky
---
-
-
-![img-center-70](images/311data_parks.png)
-
----
-
-# 2. Sorting
-???
-+ Facilitator discusses briefly the value of sorting, soliciting examples from participants of when they've sorted data for their work
---
-
-+ Reorganize rows in a dataset based on the values in a column
---
-
-+ Can sort on multiple columns
-
----
-
-# 3. Filtering
-???
-+ Facilitator leads brief discussion of filtering, soliciting examples from participants on applicability to their own work
---
-
-+ Only show rows that contain some value
---
-
-+ Can filter by multiple values
---
-
-+ Can filter by values in multiple columns
-
----
-
-# Filtering
-![img-center-100](images/filter_slide83.png)
-???
-+ Facilitator demonstrates how to filter in Excel
----
-
-# 4. Manipulating Data (In a good way...)
-???
-+ Facilitator introduces topic of manipulating (or "transforming") data 
-+ Solicit feedback from participants on when they need to transform the data they work with and how they do it
---
-
-+ Sometimes available categories don't make sense
---
-
-+ Values may not be in the format you need (or have mistakes)
---
-
-+ You always want to have a clean copy of the data to go back to
---
-
-+ Best to keep track of what you've done
-
----
-
-# 5. Visualizing Data
-???
-+ Facilitator introduces the basic concepts of why we visualize data before leading participants through an exercise to create the chart shown
---
-
-+ Quickly communicate information
---
-
-+ Tell a clearer story
---
-
-+ A picture is worth a thousands words
+1. Visualizing
 
 ---
 
@@ -519,11 +432,6 @@ FROM tbl_dailytasks
 
 ---
 
-class:center,middle
-# 15 MIN BREAK
-
----
-
 # Data types
 --
 
@@ -611,7 +519,34 @@ For example, you can do math on numbers but not on text.
 
 ---
 
-# `WHERE`
+class:center,middle
+# 15 MIN BREAK
+
+---
+
+# Data Analytics Tasks: Filtering
+???
++ Facilitator leads brief discussion of filtering, soliciting examples from participants on applicability to their own work
+--
+
++ Only show rows that contain some value
+--
+
++ Can filter by multiple values
+--
+
++ Can filter by values in multiple columns
+
+---
+
+# Filtering
+![img-center-100](images/filter_slide83.png)
+???
++ Facilitator reminds students about filtering in Excel
+
+---
+
+# In SQL we use `WHERE`
 --
 
 + Lets you limit which *rows* are selected from the database
@@ -894,7 +829,105 @@ class:center,middle
 
 ---
 
-# Aggregation
+# Data Analytics Tasks: Sorting
+???
++ Facilitator discusses briefly the value of sorting, soliciting examples from participants of when they've sorted data for their work
+--
+
++ Reorganize rows in a dataset based on the values in a column
+--
+
++ Can sort on multiple columns
+
+---
+
+# Sorting in SQL
+--
+
++ Use `ORDER BY` after `WHERE`, followed by the columns you want to sort the rows by
+--
+
+```
+SELECT *
+FROM tbl_dailytasks
+ORDER BY date_worked
+```
+
+--
+
++ Want to get the most recently worked tasks? Do a *descending* sort using `DESC`
+--
+
+```
+SELECT *
+FROM tbl_dailytasks
+ORDER BY date_worked DESC
+```
+
+---
+
+# Sorting in SQL
+--
+
++ Sort by a list of columns using `,` as a separator
+--
+
+```
+SELECT *
+FROM tbl_dailytasks
+ORDER BY sector, date_worked DESC
+```
+Sorts by `sector` first, then within each sector sorts the rows by `date_worked`
+
+---
+
+# Your Turn
+--
+
++ Use `ORDER BY` to sort `tbl_dailytasks` using another column or two
+--
+
++ Experiment with descending sort (`DESC`)
+
+---
+
+# Data Analytics Tasks: Aggregating Data 
+???
++ Facilitator reminds participants we've already done this work with the available data
++ Facilitator prompts participants to think of other ways they aggregate data for insights
+--
+
++ Trends only become clear in aggregate
+--
+
++ Often where you discover the "so what"
+--
+
++ Aggregating data meaningfully can be tricky
+--
+
+
+![img-center-70](images/311data_parks.png)
+
+---
+
+# Aggregation in Excel
+--
+
++ Remember pivot tables?
+--
+
++ ...and `COUNTIF` and `SUMIF`?
+--
+
+![img-center-80](images/countiffunctionaction.png)
+--
+
++ We're going to work through something similar using SQL
+
+---
+
+# Aggregation in SQL
 --
 
 + You often don't want or need every single row from a database
@@ -908,22 +941,6 @@ class:center,middle
 ???
 + Look back at COUNTIF/SUMIF pivot tables in Excel
 + Do something similar using a combination of GROUP BY and WHERE
-
----
-
-# Aggregation example
---
-
-+ Remember pivot tables from Excel?
---
-
-+ ...and `COUNTIF` and `SUMIF` from Excel?
---
-
-![img-center-80](images/countiffunctionaction.png)
---
-
-+ We're going to work through something similar using SQL
 
 ---
 
