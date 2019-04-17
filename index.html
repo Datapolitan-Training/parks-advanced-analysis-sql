@@ -338,21 +338,21 @@ class:center,middle
 
 ```
 SELECT *
-FROM tbl_dailytasks
+FROM tbl_ref_calendar
 ```
 --
 
-+ Get all of the columns from the `tbl_dailytasks` table
++ Get all of the columns from the `tbl_ref_calendar` table
 --
 
 
 ```
-SELECT date_created, created_by
-FROM tbl_dailytasks
+SELECT ref_date, fiscal_year
+FROM tbl_ref_calendar
 ```
 --
 
-+ Only get the `date_created` and `created_by` columns from the `tbl_dailytasks` table
++ Only get the `ref_date` and `fiscal_year` columns from the `tbl_ref_calendar` table
 ---
 
 # `FROM`
@@ -362,7 +362,7 @@ FROM tbl_dailytasks
 --
 
 ```
-FROM tbl_dailytasks
+FROM tbl_ref_calendar
 ```
 
 ---
