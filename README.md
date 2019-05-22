@@ -37,9 +37,70 @@ Employees of all levels of responsibility with a command of Microsoft Excel for 
 + Participants will have an increased curiosity about how data can be leveraged for operational awareness and program success
 
 ## Outline
-+ Welcome and Introductions
-+ Excel I/II Recap
-+ Plan the Work
++ Welcome, Introductions, and Housekeeping (Richard)
++ Review of Previous Learning - Lecture/Discussion (Eric)
+    + Data Analytics 101
+    + 5 Data Analytics Tasks
++ Importing from a Database - Guided Exercise (Eric)
++ Overview of Databases and Introduction to SQL - Lecture/Discussion/Guided Exercise (Richard)
+    + What is a database?
+    + What is a table?
+    + Using `SELECT` and `FROM`
+    + Why use a database?
+    + Why use SQL?
+    + Your Turn - Construct a simple SQL query
++ Filtering Queries with SQL - Lecture/Discussion/Guided Exercise (Eric)
+    + Filtering with `WHERE`
+    + Logical operators
+    + Your Turn - Create a simple SQL query filtering results with `WHERE`
+    + Combining filtering conditions
+    + Your Turn - Create a SQL query with multiple filter conditions
++ Wrap-up (Richard)
++ Break
++ Overview of Data Types - Lecture/Discussion/Guided Exercise (Richard)
+    + Common data types
+    + Importance of data types in databases
+    + Your Turn - Test knowledge of data types by querying for specific value in the table
++ Using Formulas and Functions in SQL - Lecture/Discussion/Guided Exercise (Eric)
+    + Overview of formulas in SQL
+    + Overview of functions in SQL
+    + Your Turn - Write a simple SQL query that uses a built-in SQL Server function from the documentation provided
++ Documenting Work - Lecture/Discussion (Richard)
++ Sorting Data in SQL - Lecture/Discussion/Guided Exercise (Richard)
+    + Overview of Sorting
+    + Using `ORDER BY` 
+    + Specifing order with `DESC`
+    + Your Turn - Write a SQL query that sorts the result by one or two columns of data
++ Aggregating Data with SQL - Lecture/Discussion/Guided Exercise (Eric)
+    + Overview of Aggregation
+    + Aggregating in Excel (explain by reference to known example)
+    + Aggregation in SQL with `GROUP BY`
+    + Overview of Aggregation Operators (`SUM`, `COUNT`,`AVG`,`MAX`, `MIN`)
+    + Your Turn - Write a SQL query that meaningfully aggregates the daily tasks data
++ Wrap-Up - Lecture/Discussion (Richard)
++ Lunch
++ Welcome Back and Morning Recap - Lecture/Discussion (Richard)
++ Joining Data - Lecture/Discussion/Guided Exercise (Richard/Eric)
+    + Joins in Excel (Richard)
+    + Joins in SQL (Eric)
+    + Your Turn - Join daily tasks data to the PIP inspection data in SQL (Eric)
++ Wrap-Up - Lecture/Discussion (Richard)
++ Break
++ Final Exercise - Small Group Exercise (Richard)
+    + Overview of Task
+    + Reminder of Previous Learning (Process Map)
+    + Ideation of Question to Explore
+    + Task Instruction
++ Presentations (Eric/Richard)
++ Wrap-Up - Lecture/Discussion (Eric)
+    + What We've Covered
+    + Optimizing Queries
+    + SQL Server Management Studio (SSMS) Overview
+    + Resources
+    + Contact Information
+    + Survey Link
+
+<!-- + Plan the Work
     + Data Conversation (identifying assumptions/validation)
     + Documenting work (process mapping redux)
     + Importing Data (SQL, CSV)
@@ -55,7 +116,7 @@ Employees of all levels of responsibility with a command of Microsoft Excel for 
     + Optimizing queries
 + Communicate the Work
     + Presentations
-+ Wrap-Up
++ Wrap-Up -->
 
 ![img](SQL_Topics.jpg)
 
