@@ -37,8 +37,8 @@ class:center, middle
 
 - - -
 
-## Instructors: 
-## Teaching Assistant:
+## Instructors: Richard Dunks and Eric Brelsford
+## Teaching Assistant: Mark Yarish
 ### Follow along at: http://bit.ly/advanced-analysis-sql
 
 #### See the code at: http://bit.ly/advanced-analysis-sql-code
@@ -338,21 +338,21 @@ class:center,middle
 
 ```
 SELECT *
-FROM tbl_dailytasks
+FROM tbl_ref_calendar
 ```
 --
 
-+ Get all of the columns from the `tbl_dailytasks` table
++ Get all of the columns from the `tbl_ref_calendar` table
 --
 
 
 ```
-SELECT date_created, created_by
-FROM tbl_dailytasks
+SELECT ref_date, fiscal_year
+FROM tbl_ref_calendar
 ```
 --
 
-+ Only get the `date_created` and `created_by` columns from the `tbl_dailytasks` table
++ Only get the `ref_date` and `fiscal_year` columns from the `tbl_ref_calendar` table
 ---
 
 # `FROM`
@@ -362,7 +362,7 @@ FROM tbl_dailytasks
 --
 
 ```
-FROM tbl_dailytasks
+FROM tbl_ref_calendar
 ```
 
 ---
@@ -1301,7 +1301,18 @@ class:center, middle
 ---
 
 # SSMS
---
+
+![img-center-100](images/ssms_query.png)
+
+---
+
+# SSMS
+
+![img-center-80](images/ssms_query_1.png)
+
+---
+
+# SSMS
 
 + Now that you know some SQL, you may be interested in SSMS (SQL Server Management Studio)
 --
@@ -1309,7 +1320,7 @@ class:center, middle
 + SSMS is a free tool for querying databases
 --
 
-+ You could test an SQL query in SSMS, then use it in Excel
++ You might test an SQL query in SSMS, then use it in Excel
 
 ---
 
@@ -1397,10 +1408,10 @@ class:center, middle
 ## Eric Brelsford
 <ul>
     <li style="font-size:35px">
-      Email: ebrelsford[at]gmail[dot]com]
+      Email: ebrelsford[at]gmail[dot]com
     </li>
     <li style="font-size:35px">
-      Twitter: [@ebrelsford](https://twitter.com/ebrelsford)
+      Twitter: <a href="https://twitter.com/ebrelsford">@ebrelsford</a>
     </li>
 </ul>
 
