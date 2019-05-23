@@ -437,7 +437,10 @@ FROM tbl_dailytasks
 + Facilitator leads brief discussion of filtering, soliciting examples from participants on applicability to their own work
 --
 
-+ Only show rows that contain some value
++ Show a preview of rows
+--
+
++ Or only show rows that contain some value
 --
 
 + Can filter by multiple values
@@ -447,7 +450,27 @@ FROM tbl_dailytasks
 
 ---
 
-# Filtering
+# Previewing rows
+--
+
++ You can use `SELECT TOP` to get the first set of rows
+--
+
+```
+SELECT TOP 5 *
+FROM tbl_dailytasks
+```
+
+--
+
++ Select the top 5 rows from `tbl_dailytasks`
+--
+
++ Without *sorting* the data this could be any 5 rows&mdash;we'll talk about sorting soon
+
+---
+
+# Filtering by column values
 ![img-center-100](images/filter_slide83.png)
 ???
 + Facilitator reminds students about filtering in Excel
