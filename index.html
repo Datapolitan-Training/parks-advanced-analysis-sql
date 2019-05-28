@@ -514,26 +514,29 @@ FROM tbl_dailytasks
 # `WHERE`
 
 ```
-SELECT *
+SELECT TOP 10 *
 FROM tbl_dailytasks
 WHERE graffiti = 1
 ```
 --
 
-+ Select the daily tasks rows where graffiti was present
++ Select the top 10 daily tasks rows where graffiti was present
+--
+
++ Note that we are using `TOP` along with `WHERE` here so we don't load too much data
 
 ---
 
 # `WHERE`
 
 ```
-SELECT *
+SELECT TOP 10 *
 FROM tbl_dailytasks
 WHERE nhours &gt; 1
 ```
 --
 
-+ Select the daily tasks rows where `nhours` is greater than 1
++ Select the top 10 daily tasks rows where `nhours` is greater than 1
 
 ---
 
