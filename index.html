@@ -743,12 +743,27 @@ class:center,middle
 + Databases and SQL are less flexible than Excel here
 --
 
-+ Knowing the data type of a column can help you better understand what to expect in that column
++ Knowing data type tells you what to expect in that column
 --
- - `date` columns will never include time, for example
+
++ For example: `date` columns will never include time
 --
 
 + Some functions only work on certain data types
+---
+
+# Working with Data Types
+--
+
++ Can get the information on types from the `INFORMATION_SCHEMA` table:
+--
+
+```sql
+SELECT *
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME='tbl_dailytasks'
+```
+
 --
 
 + If you need a column to be a different data type, you might find [`CAST` or `CONVERT` useful](https://docs.microsoft.com/en-us/sql/t-sql/functions/cast-and-convert-transact-sql?view=sql-server-2017)
