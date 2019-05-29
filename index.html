@@ -1207,12 +1207,12 @@ class:center, middle
 + The format of a join is: `LEFT JOIN &lt;table_name&gt; ON &lt;condition&gt;`
 --
 
-+ For example, `LEFT JOIN tbl_pipinspectionmain pip ON tasks.omppropid = pip.prop_id`
++ For example, `LEFT JOIN tbl_PIP_AllSites AS sites ON pip.[Prop ID] = sites.[Prop ID]`
 
 ---
 
 class:center,middle
-# Let's use a join to get the park names from Daily Tasks into the PIP Inspection data
+# Let's use a join to add park names to the PIP Inspection data
 
 ---
 
@@ -1224,9 +1224,9 @@ class:center,middle
 ## The full example is:
 
 ```
-SELECT pip.*, tasks.signname
-FROM tbl_pipinspectionmain pip
-LEFT JOIN tbl_dailytasks tasks ON pip.prop_id = tasks.omppropid
+SELECT pip.*, sites.[Prop Name], sites.[Site Name]
+FROM tbl_PIP_InspectionMain AS pip
+LEFT JOIN tbl_PIP_AllSites AS sites ON pip.[Prop ID] = sites.[Prop ID]
 ```
 --
 
@@ -1240,12 +1240,12 @@ LEFT JOIN tbl_dailytasks tasks ON pip.prop_id = tasks.omppropid
 + Try running the join example we worked through together:
 
 ```
-SELECT pip.*, tasks.signname
-FROM tbl_pipinspectionmain pip
-LEFT JOIN tbl_dailytasks tasks ON pip.prop_id = tasks.omppropid
+SELECT pip.*, sites.[Prop Name], sites.[Site Name]
+FROM tbl_PIP_InspectionMain AS pip
+LEFT JOIN tbl_PIP_AllSites AS sites ON pip.[Prop ID] = sites.[Prop ID]
 ```
 
-+ Add more columns from the `tbl_dailytasks` to the `SELECT` columns
++ Add more columns from `tbl_PIP_AllSites` to the `SELECT` columns
 
 ---
 
