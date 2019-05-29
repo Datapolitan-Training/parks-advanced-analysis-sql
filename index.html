@@ -345,7 +345,7 @@ class:center,middle
 
 # For example:
 ![img-right-30](images/cal_query_crop_box.png)
-```
+```sql
 SELECT *
 FROM tbl_ref_calendar
 ```
@@ -358,7 +358,7 @@ FROM tbl_ref_calendar
 # For example:
 
 ![img-right-30](images/cal_query2_crop.png)
-```
+```sql
 SELECT ref_date, fiscal_year
 FROM tbl_ref_calendar
 ```
@@ -378,7 +378,7 @@ FROM tbl_ref_calendar
 + How you specify the table you are querying
 --
 
-```
+```sql
 FROM tbl_ref_calendar
 ```
 
@@ -435,9 +435,9 @@ class:center,middle
 + We talked about using `SELECT` to pick which columns to pull from a table:
 --
 
-```
-SELECT date_created, created_by
-FROM tbl_dailytasks
+```sql
+SELECT ref_date, fiscal_year
+FROM tbl_ref_calendar
 ```
 
 --
