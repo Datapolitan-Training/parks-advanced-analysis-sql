@@ -573,6 +573,24 @@ WHERE graffiti = 1
 
 ---
 
+# But `graffiti` is `TRUE` or `FALSE`
+
+![img-center-80](images/graffiti-bit.jpg)
+--
+
++ We'll be talking about data types soon, but this column is stored as a `BIT`, which is `1` or `0`
+--
+
++ This is a common way to store values that are true or false
+--
+
++ In this case, Excel is displaying the values at `TRUE` and `FALSE`, but in the database they are `1` or `0`
+--
+
++ Learn more about [BIT here](http://www.sqlservertutorial.net/sql-server-basics/sql-server-bit/)
+
+---
+
 # `WHERE`
 
 ```sql
@@ -739,6 +757,12 @@ class:center,middle
 + `numeric`
 --
  - a number with digits after the decimal point, like `5.01` or `100.349`
+--
+
++ `bit`
+--
+ - a number that can only be `0` or `1`; as we mentioned earlier, this is commonly used for boolean (true or false) values
+
 ---
 
 # Common text data types
