@@ -935,6 +935,38 @@ FROM tbl_dailytasks
 
 ---
 
+# Expanding boro names
+
+## Remember this from Excel II?
+
+![img-center-100](images/excel-nestedifs.png)
+
+---
+
+# Expanding boro names
+
+## You can do something similar in SQL!
+
+--
+
+```sql
+SELECT 
+  CASE 
+       WHEN LEFT(omppropid, 1) = 'B' THEN 'Brooklyn'
+       WHEN LEFT(omppropid, 1) = 'M' THEN 'Manhattan'
+       WHEN LEFT(omppropid, 1) = 'X' THEN 'Bronx'
+       WHEN LEFT(omppropid, 1) = 'R' THEN 'Staten Island'
+       WHEN LEFT(omppropid, 1) = 'Q' THEN 'Queens'   
+  END AS boro,
+  COUNT(*) AS dt_count
+FROM tbl_dailytasks
+WHERE LEFT(omppropid, 1) IS NOT NULL
+GROUP BY LEFT(omppropid, 1)
+ORDER BY LEFT(omppropid, 1)
+```
+
+---
+
 # Documentation
 --
 
