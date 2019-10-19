@@ -159,7 +159,7 @@ class:center,middle
 --
 
 
-![img-center-80](images/311data_parks.png)
+![img-center-80](images/parks-inspections-visitors.png)
 ???
 + Facilitator helps participants see the direct measurements of service requests while indirectly measuring when Park incidents actually happen
 ---
@@ -429,6 +429,32 @@ class:center,middle
 
 ---
 
+# Editing a query
+--
+
++ You don't have to create a new query each time you want to change the SQL
+--
+
++ If you are experimenting with a query, we recommend *editing* the SQL instead
+
+---
+
+# Editing a query
+
+![img-center-100](images/query-edit-1.jpg)
+
++ Double click the **Source**
+
+---
+
+# Editing a query
+
+![img-center-60](images/query-edit-2.jpg)
+
++ Edit the SQL as usual
+
+---
+
 # Your Turn
 --
 
@@ -474,6 +500,9 @@ FROM tbl_ref_calendar
 --
 
 + Approximately 78,000 tasks logged a month (~936,000 a year)
+--
+
++ Nearly 3.9 million tasks logged as of Spring 2019
 --
 
 + Can't work with all this data at once
@@ -544,6 +573,24 @@ WHERE graffiti = 1
 --
 
 + Note that we are using `TOP` along with `WHERE` here so we don't load too much data
+
+---
+
+# But `graffiti` is `TRUE` or `FALSE`
+
+![img-center-80](images/graffiti-bit.jpg)
+--
+
++ We'll be talking about data types soon, but this column is stored as a `BIT`, which is `1` or `0`
+--
+
++ This is a common way to store values that are true or false
+--
+
++ In this case, Excel is displaying the values at `TRUE` and `FALSE`, but in the database they are `1` or `0`
+--
+
++ Learn more about [BIT here](http://www.sqlservertutorial.net/sql-server-basics/sql-server-bit/)
 
 ---
 
@@ -652,6 +699,9 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 --
 
 + Why would we use parentheses here?
+--
+
++ Learn more about [SQL's order of evaluation](http://www.peachpit.com/articles/article.aspx?p=1276352&seqNum=6) and [propositional logic](https://www.tutorialspoint.com/discrete_mathematics/discrete_mathematics_propositional_logic.htm)
 
 ---
 
@@ -660,6 +710,56 @@ WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 + Create an SQL query with a `WHERE` clause
 + Continue using the `tbl_dailytasks` table
 + Start with one condition, then try adding conditions using `AND` / `OR`
+
+---
+
+# Documentation
+--
+
++ It never hurts to keep track of your work
+--
+
++ Can help you remember the steps you took
+--
+
++ Can help you find errors in your methods
+--
+
++ In the future, can help you reconstruct your work and adapt it to solve different problems
+--
+
++ Colleagues and your future self will find it helpful
+
+---
+
+class:center,middle
+# How should we document SQL work?
+
+---
+
+# Documentation with SQL
+--
+
++ If you're working in Excel, you could use a separate worksheet where you track the steps you have taken
+--
+
+
+![img-center-100](images/document_ex1_rev_box.png)
+
+---
+
+# Documentation with SQL
+
++ If you're not working in Excel, you could keep a simple text document in Notepad where you keep track of the queries you're using
+--
+
++ Either way, be sure to track the queries you're using and the date that you accessed the data
+--
+
++ And if you make changes to the data after getting it from the database, track those steps too
+--
+
++ The queries we're talking about today are documented in your [today's handout](workbook.pdf)&mdash;you can take notes there, too
 
 ---
 
@@ -710,6 +810,12 @@ class:center,middle
 + `numeric`
 --
  - a number with digits after the decimal point, like `5.01` or `100.349`
+--
+
++ `bit`
+--
+ - a number that can only be `0` or `1`; as we mentioned earlier, this is commonly used for boolean (true or false) values
+
 ---
 
 # Common text data types
@@ -749,13 +855,29 @@ class:center,middle
 + Databases and SQL are less flexible than Excel here
 --
 
-+ Knowing data type tells you what to expect in that column
++ Knowing the data type of a column tells you what to expect in that column
 --
 
 + For example: `date` columns will never include time
 --
 
 + Some functions only work on certain data types
+---
+
+# What data type should zip codes be stored as?
+--
+
++ `numeric`?
+--
+
++ `varchar`?
+--
+
++ How do you handle a zip code like **08904**?
+--
+
++ or **11368-3398**?
+
 ---
 
 # Working with Data Types
@@ -792,7 +914,7 @@ WHERE TABLE_NAME='tbl_dailytasks'
 + See other date and time functions in the [SQL Server documentation](https://docs.microsoft.com/en-us/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql?view=sql-server-2017#DateandTimeFunctions)
 --
 
-+ Try selecting the rows from `tbl_dailytasks` where `YEAR(date_worked)` is `2019`
++ Try selecting the top 10 rows from `tbl_dailytasks` with the columns `date_worked` and `YEAR(date_worked)`
 
 ---
 
@@ -861,11 +983,11 @@ FROM tbl_dailytasks
 + The format is `LEFT(column, length)`
 --
 
-+ `LEFT(propid, 1)` would select the first letter from the `propid` column
++ `LEFT(omppropid, 1)` would select the first letter from the `omppropid` column
 
 --
 ```sql
-SELECT LEFT(propid, 1)
+SELECT LEFT(omppropid, 1)
 FROM tbl_dailytasks
 ```
 
@@ -882,50 +1004,35 @@ FROM tbl_dailytasks
 
 ---
 
-# Documentation
---
+# Expanding boro names
 
-+ It never hurts to keep track of your work
---
+## Remember this from Excel II?
 
-+ Can help you remember the steps you took
---
-
-+ Can help you find errors in your methods
---
-
-+ In the future, can help you reconstruct your work and adapt it to solve different problems
---
-
-+ Colleagues and your future self will find it helpful
+![img-center-100](images/excel-nestedifs.png)
 
 ---
 
-class:center,middle
-# How should we document SQL work?
+# Expanding boro names
 
----
+## You can do something similar in SQL!
 
-# Documentation with SQL
 --
 
-+ If you're working in Excel, you could use a separate worksheet where you track the steps you have taken
---
-
-
-![img-center-100](images/document_ex1_rev_box.png)
-
----
-
-# Documentation with SQL
-
-+ If you're not working in Excel, you could keep a simple text document in Notepad where you keep track of the queries you're using
---
-
-+ Either way, be sure to track the queries you're using and the date that you accessed the data
---
-
-+ And if you make changes to the data after getting it from the database, track those steps too
+```sql
+SELECT 
+  CASE 
+       WHEN LEFT(omppropid, 1) = 'B' THEN 'Brooklyn'
+       WHEN LEFT(omppropid, 1) = 'M' THEN 'Manhattan'
+       WHEN LEFT(omppropid, 1) = 'X' THEN 'Bronx'
+       WHEN LEFT(omppropid, 1) = 'R' THEN 'Staten Island'
+       WHEN LEFT(omppropid, 1) = 'Q' THEN 'Queens'   
+  END AS boro,
+  COUNT(*) AS dt_count
+FROM tbl_dailytasks
+WHERE LEFT(omppropid, 1) IS NOT NULL
+GROUP BY LEFT(omppropid, 1)
+ORDER BY LEFT(omppropid, 1)
+```
 
 ---
 
@@ -1007,7 +1114,7 @@ Sorts by `sector` first, then within each sector sorts the rows by `date_worked`
 --
 
 
-![img-center-70](images/311data_parks.png)
+![img-center-70](images/parks-inspections-visitors.png)
 
 ---
 
@@ -1310,6 +1417,36 @@ LEFT JOIN tbl_PIP_AllSites AS sites ON pip.[Prop ID] = sites.[Prop ID]
 
 ---
 
+# Left join
+
+![img-center-60](images/joins-venn-outer-left.png)
+
+## Keeps all records in the left table with matching entries (if any) from the right table
+
+---
+
+# Inner join
+
+![img-center-60](images/joins-venn-inner.png)
+
+## Keeps only records that match in the left table and right table
+
+---
+
+# Right join
+
+![img-center-60](images/joins-venn-outer-right.png)
+
+## Keeps all records in the right table with matching entries (if any) from the left table
+
+---
+
+![img-center-50](images/joins-julia-evans.jpeg)
+
+#### Image Source: [Julia Evans on Twitter](https://twitter.com/b0rk/status/1177642768484712449)
+
+---
+
 class:center,middle
 # WRAP-UP
 
@@ -1434,6 +1571,9 @@ class:center, middle
 --
 
 + You might test an SQL query in SSMS, then use it in Excel
+--
+
++ If you don’t already have it installed, email the IT Help Desk at <a href="mailto:Parks-IT.HelpDesk@parks.nyc.gov">Parks-IT.HelpDesk@parks.nyc.gov</a> and mention that you attended the Advanced Data Analysis with SQL class
 
 ---
 
