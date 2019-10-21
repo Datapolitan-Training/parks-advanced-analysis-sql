@@ -663,7 +663,7 @@ class:center,middle
 # `WHERE`
 
 ```sql
-SELECT *
+SELECT TOP 10 *
 FROM tbl_dailytasks
 WHERE graffiti = 1 AND nhours &gt; 1
 ```
@@ -676,7 +676,7 @@ WHERE graffiti = 1 AND nhours &gt; 1
 # `WHERE`
 
 ```sql
-SELECT *
+SELECT TOP 10 *
 FROM tbl_dailytasks
 WHERE omppropid = 'X045-01' OR omppropid = 'X045-02'
 ```
@@ -689,7 +689,7 @@ WHERE omppropid = 'X045-01' OR omppropid = 'X045-02'
 # `WHERE`
 
 ```sql
-SELECT *
+SELECT TOP 10 *
 FROM tbl_dailytasks
 WHERE NOT (omppropid = 'X045-01' OR omppropid = 'X045-02')
 ```
@@ -952,7 +952,7 @@ would find the number of minutes
 --
 
 ```sql
-SELECT nhours * 60
+SELECT TOP 10 nhours * 60
 FROM tbl_dailytasks
 ```
 
@@ -987,7 +987,7 @@ FROM tbl_dailytasks
 
 --
 ```sql
-SELECT LEFT(omppropid, 1)
+SELECT TOP 10 LEFT(omppropid, 1)
 FROM tbl_dailytasks
 ```
 
@@ -1052,7 +1052,7 @@ WHERE LEFT(omppropid, 1) IS NOT NULL
 --
 
 ```sql
-SELECT *
+SELECT TOP 10 *
 FROM tbl_dailytasks
 ORDER BY date_worked
 ```
@@ -1063,7 +1063,7 @@ ORDER BY date_worked
 --
 
 ```sql
-SELECT *
+SELECT TOP 10 *
 FROM tbl_dailytasks
 ORDER BY date_worked DESC
 ```
@@ -1077,7 +1077,7 @@ ORDER BY date_worked DESC
 --
 
 ```sql
-SELECT *
+SELECT TOP 10 *
 FROM tbl_dailytasks
 ORDER BY sector, date_worked DESC
 ```
